@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,35 +9,76 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <section class="register vh-100 d-flex justify-content-center align-items-center">
+    <section class="register d-flex justify-content-center align-items-center">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form action="" class="w-75 text-center mx-auto py-3 px-5 shadow-lg">
+                    <form method="get" action="" class="w-75 text-center mx-auto py-3 px-5 shadow-lg">
                         <h2 class="mb-4 text-light">Smart Login System</h2>
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control bg-transparent" id="name" name="name"  placeholder="name@example.com">
-                            <label for="name"  class="text-light">Your Name</label>
+                            <input type="text" class="form-control bg-transparent" id="userName" name="name"
+                                placeholder="name@example.com" onblur="validateData(/^[\w]{3,10}$/ , this.value  ,alertName )">
+                            <label for="userName" class="text-light">Your Name</label>
                         </div>
+                        <div id="alertName" class="alert alert-light d-none" role="alert">
+                            please Enter Valid Name from 3 to 10 Chars
+                        </div>
+
+
+
                         <div class="form-floating mb-4">
-                            <input type="email" class="form-control bg-transparent" id="email" name="email"  placeholder="email@example.com">
-                            <label for="email"  class="text-light">Your Email</label>
+                            <input type="email" class="form-control bg-transparent" id="email" name="email"
+                                placeholder="email@example.com"  onblur="validateData(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ , this.value  ,alertEmail )">
+                            <label for="email" class="text-light">Your Email</label>
                         </div>
+                        <div id="alertEmail" class="alert alert-light d-none" role="alert">
+                            please Enter Valid Email
+                        </div>
+
+
+
+
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control bg-transparent" id="password" name="password"  placeholder="password@example.com">
-                            <label for="password"  class="text-light">Your password</label>
+                            <input type="password" class="form-control bg-transparent" id="password" name="password"  onblur="validateData(/^[\w]{6,15}$/ , this.value  ,alertPassword )"
+                                placeholder="password@example.com">
+                            <label for="password" class="text-light">Your password</label>
                         </div>
+                        <div id="alertPassword" class="alert alert-light d-none" role="alert">
+                            please Enter Valid Password from 6 to 15 Chars
+                        </div>
+
+
+
+                        <!-- <div class="form-floating mb-4">
+                            <input type="password" class="form-control bg-transparent" id="repassword" name="repassword"  onblur="validateData(/^$/ , this.value , this ,alerRePassword )"
+                                placeholder="password@example.com">
+                            <label for="repassword" class="text-light">Confirm Your password</label>
+                        </div>
+                        <div id="alerRePassword" class="alert alert-light d-none" role="alert">
+                            Password not matches
+                        </div> -->
+
+
+
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control bg-transparent" id="repassword" name="repassword"  placeholder="password@example.com">
-                            <label for="repassword"  class="text-light">Confirm Your password</label>
+                            <input type="tel" class="form-control bg-transparent" id="phone" name="phone"
+                                placeholder="password@example.com"  onblur="validateData(/^01[0125][0-9]{8}$/ , this.value ,alertPhone )">
+                            <label for="phone" class="text-light">Your Phone</label>
                         </div>
-                        <div class="form-floating mb-4">
-                            <input type="tel" class="form-control bg-transparent" id="phone" name="phone"  placeholder="password@example.com">
-                            <label for="phone"  class="text-light">Your Phone</label>
+                        <div id="alertPhone" class="alert alert-light d-none" role="alert">
+                            please Enter Egyptian Number
                         </div>
-                         <button class="btn btn-primary bg-transparent w-100 fs-4 mb-4">Sign Up</button>
-                         <h5 class="text-light">You have an account? <span><a href="index.html">Signin</a></span> </h5>
+
+
+
+                        
+                        <button onclick="register()" id="register" class="btn btn-primary bg-transparent w-100 fs-4 mb-4">Sign Up</button>
+                        <div id="alertRegister" class="alert alert-warning d-none " role="alert">
+                           Email Added Succeffuly
+                        </div>
+                        <h5 class="text-light">You have an account? <span><a href="index.html">Signin</a></span> </h5>
                     </form>
                 </div>
             </div>
@@ -47,4 +89,5 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>
 </body>
+
 </html>

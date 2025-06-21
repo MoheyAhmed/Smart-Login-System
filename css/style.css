@@ -6,6 +6,7 @@
 
 .login , .register{
     background-color: #09090B ;
+    min-height: 100vh;
 }
 .login form , .register form{
     border-radius: 25px;
@@ -14,6 +15,7 @@
 
 .login input , .login button , .register input , .register button{
     border-color: #434345;
+    color: #fff !important;
 }
 
 .login input:focus , .login button:hover , .register input:focus , .register button:hover{

@@ -3,3 +3,28 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.login , .register{
+    background-color: #09090B ;
+}
+.login form , .register form{
+    border-radius: 25px;
+    border: 2px solid #434345;
+}
+
+.login input , .login button , .register input , .register button{
+    border-color: #434345;
+}
+
+.login input:focus , .login button:hover , .register input:focus , .register button:hover{
+    border-color: #434345;
+    box-shadow: 0 0 0 .1rem #434345;
+}
+
+@media (max-width : 700px){
+    .login form , .register form{
+        text-align: center;
+        padding: 20px !important;
+        width: 95% !important;
+    }
+}
